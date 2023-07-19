@@ -1,9 +1,16 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"game-rec-back/db"
+
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
 	r := gin.Default()
+
+	//InitDBを実行
+	db.InitDB()
 
 	r.GET("/", func(c *gin.Context){
 		c.JSON(200, gin.H{
