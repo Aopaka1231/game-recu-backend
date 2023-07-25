@@ -18,7 +18,7 @@ func GetAllRec()(res_rec []db.Rec, err error){
 }
 
 //引数のidのRecを削除する関数
-func DeleteRed(id uint)(err error){
+func DeleteRec(id uint)(err error){
 	err = db.Ssql.Where("id = ?", id).Delete(&db.Rec{}).Error
 
 	return
