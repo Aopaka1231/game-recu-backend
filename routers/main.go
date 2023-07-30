@@ -24,4 +24,9 @@ func InitRouter(r *gin.Engine){
 			"*",
 		},
 	}))
+
+	//RecRouterのすべてのパスを"/rec"で始まるようにグループ化
+	rec_router := r.Group("/rec")
+	//InitRecRouterを実行
+	InitRecRouters(rec_router)
 }
